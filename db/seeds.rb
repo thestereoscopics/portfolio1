@@ -1,0 +1,6 @@
+Note.create(title: "Finish Portfolio 1", content: "Space them out.")
+Note.create(title: "Call Christine", content: "Make sure to call at 8pm.")
+Note.create(title: "Bathroom!", content: "no content.")
+Note.create(title: "Eat", content: "Otherwise you're cranky.")
+Note.create(title: "Read", content: "Something fun!(soon hopefully)")
+Note.create(title: "Sleep", content: "In the next life.")

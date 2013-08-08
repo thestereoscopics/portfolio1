@@ -4,20 +4,38 @@ get '/' do
 end
 
 post '/' do 
-
-  redirect "/new_note"
-  # case
-  #   when :main_choice == "Create"
-  #     erb :new_note
-  #   when :main_choice == "Read"
-  #     erb :listing
-  #   when :main_choice == "Update"
-  #     erb :update_note
-  #   when :main_choice == "Destroy"
-  #     erb :delete_note
-  # end
+  @notes = Note.all 
+  case
+    when params[:main_choice] == "Create"
+      @note 
+      redirect "/new_note"
+    when params[:main_choice] == "Read"
+      @note
+      redirect "/listing"
+    when params[:main_choice] == "Update"
+      @note
+      redirect "/update_note"
+    when params[:main_choice] == "Destroy"
+      @note
+      redirect "/delete_note"
+  end
 end
 
 get '/new_note' do
+  erb :new_note
+end
 
+get '/listing' do
+  @notes = Note.all
+  erb :listing
+end
+
+get '/update_note' do
+  @notes = Note.all
+  erb :update_note
+end
+
+get '/delete_note' do
+  @notes = Note.all
+  erb :delete_note
 end
