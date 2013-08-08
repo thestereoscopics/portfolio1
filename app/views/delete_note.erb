@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Let's Delete a Note!</h1>
+  <p>What note would you like to destroy?</p>
+
+  <form name="route_to" method="POST">
+    <select name="main_choice">
+      <% @notes.each do |note| %>
+      <option value="Destroy"><%= note.title %></option>
+      <% end %>
+      <br><input type="submit" value="Delete">
+    </select>
+  </form>
+
+  <form action="/" method="get">
+    <input type="submit" value="Home!">
+  </form>
+
+</div>

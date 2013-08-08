@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Let's Update a Note!</h1>
+  <p>What note would you like to update?</p>
+
+  <form name="route_to" method="POST">
+    <select name="main_choice">
+      <% @notes.each do |note| %>
+      <option value="Update"><%= note.title %></option>
+      <% end %>
+      <p>Title: </p>
+        <input type="text" value="new_title">
+      <br><p>Content: </p>
+        <textarea cols="40" rows="10" value="new_content">
+        </textarea>
+      <br>
+      <br><input type="submit" value="Update">
+    </select>
+  </form>
+
+  <form action="/" method="get">
+    <input type="submit" value="Home!">
+  </form>
+
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Here's a List of All Notes!</h1>
+
+  <div>
+    <% @notes.each do |note| %>
+    <%= note.title %>:<br>
+    <%= note.content %><br>
+    <% end %>
+  </div>
+
+  <form action="/" method="get">
+    <input type="submit" value="Home!">
+  </form>
+</div>
