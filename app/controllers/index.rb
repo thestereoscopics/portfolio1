@@ -1,5 +1,6 @@
+enable :sessions
+
 get '/' do
-  # Look in app/views/index.erb
   erb :index
 end
 
@@ -19,6 +20,29 @@ post '/' do
       @note
       redirect "/delete_note"
   end
+end
+
+post '/create_note' do
+  Note.create(title: params[:new_title], content: params[:new_content].rstrip)
+  redirect "/"
+end
+
+post '/update_note' do
+  p params
+  note = Note.find_by_title(params[:main_choice])
+  note.update_attributes(title: params[:new_title], content: params[:new_content])
+  redirect '/'
+end
+
+get '/really' do
+  session[:id] = params[:remove]
+  erb :you_sure
+end
+
+get '/sure' do
+  @note = Note.find_by_id(session[:id])
+  @note.destroy
+  redirect '/'
 end
 
 get '/new_note' do

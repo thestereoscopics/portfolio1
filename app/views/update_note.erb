@@ -5,16 +5,17 @@
   <form name="route_to" method="POST">
     <select name="main_choice">
       <% @notes.each do |note| %>
-      <option value="Update"><%= note.title %></option>
+      <option  name=<%= "#{note.title}" %>><%= note.title %></option>
       <% end %>
-      <p>Title: </p>
-        <input type="text" value="new_title">
+    </select>
+      <br><p>Title: </p>
+        <input type="text" name="new_title">
       <br><p>Content: </p>
-        <textarea cols="40" rows="10" value="new_content">
+        <textarea cols="40" rows="10" name="new_content">
         </textarea>
       <br><br>
       <input type="submit" value="Update">
-    </select>
+    
   </form>
 
   <form action="/" align="right" method="get">

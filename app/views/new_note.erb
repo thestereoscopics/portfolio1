@@ -1,11 +1,11 @@
 <div class="container" align="center">
   <h1>New Note!</h1>
 
-  <form action='/' method="post">
+  <form action='/create_note' method="post">
     <p>Title: </p>
-      <input type="text"><br>
+      <input type="text" name="new_title"><br>
     <p>Content: </p>
-      <textarea cols="40" rows="10" name="content">
+      <textarea cols="40" rows="10" name="new_content">
       </textarea><br><br>
       <input type="submit" value="Post it!">
   </form>
